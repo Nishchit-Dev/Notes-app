@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#86E6E5E5"
+    android:elevation="0dp"
+    tools:context=".Notes_screen">
+    
+
+    <ImageView
+        android:id="@+id/emptyState"
+        android:layout_width="369dp"
+        android:layout_height="377dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Rv"
+        app:srcCompat="@drawable/emptystate" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="76dp"
+        android:background="#00FFFFFF"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <SearchView
+
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="true"
+            android:background="@drawable/note_holder"
+            android:clickable="true"
+            android:fadingEdge="none"
+            android:queryBackground="@android:color/transparent"
+            android:queryHint="Search for Note's Descritpion"
+            android:scrollbarStyle="outsideInset"
+            android:soundEffectsEnabled="true"
+            android:submitBackground="@android:color/transparent" />
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:foregroundGravity="top"
+        android:paddingBottom="-30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserratbold"
+        android:maxLength="214"
+        android:paddingBottom="10dp"
+        android:text="Wednesday"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="5dp"
+        android:onClick="clearData"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toEndOf="@+id/day"
+        app:layout_constraintTop_toTopOf="@+id/day"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/delete_btn" />
+
+    <ImageView
+        android:id="@+id/insert_notes"
+        android:layout_width="67dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="38dp"
+        android:onClick="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/add_btn_style_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
